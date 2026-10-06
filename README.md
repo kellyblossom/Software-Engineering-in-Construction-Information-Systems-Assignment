@@ -5,9 +5,9 @@
 graph TD
 
     %% Color definition
-    classDef high fill:#ffe5e5,stroke:#333,stroke-width:2px;
-    classDef med fill:#ffffe5,stroke:#333,stroke-width:2px;
-    classDef low fill:#e5f2ff,stroke:#333,stroke-width:2px;
+    classDef high fill:#ffe5e5,stroke:#333,stroke-width:2px,color:black;
+    classDef med fill:#ffffe5,stroke:#333,stroke-width:2px,color:black;
+    classDef low fill:#e5f2ff,stroke:#333,stroke-width:2px,color:black;
 
     %% Main home page
     A[Homepage] --> B(Header & Search)
