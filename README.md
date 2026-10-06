@@ -4,7 +4,6 @@
 ```mermaid
 graph TD
 
-    %% Main Skeleton (Shopee Style)
     A[Homepage] --> B(Header & Search)
     A --> C(Banners)
     A --> D(Quick Links)
