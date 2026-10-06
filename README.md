@@ -59,4 +59,4 @@ graph TD
     class BL,BR,BL1,BL2,BR1,BR2,D3,D4,E,E_Mat,E_Sup,E1,E2,E3,E4,E5,E6,E7,E8 med;
     
     %% Blue color (Low priority - Ads and more)
-    class C,F low;
+    class C,C1,C2,C3,F low;
