@@ -16,7 +16,7 @@ graph TD
     %% Top right - interactions for contractors
     B --> B3(Sign up)
     B --> B4(login)
-    B --> B5 (Orders)
+    B --> B5(Orders)
 
  
     D --> D1(Material Management - Rep: Materials Engineer)
