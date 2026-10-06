@@ -22,7 +22,7 @@ graph TD
 
  
     D --> D1(Material Management - Rep: Materials Engineer)
-    D --> D2(Order Processing - Rep: Procurement Officer)
+    D --> D2(Order & Delivery Tracking - Rep: Procurement Officer & Supplier)
     D --> D3(Dashboard - Rep: Project Manager)
     %% Quick Link for Supplier:
     D --> D4(Manage Quotes & Deliveries - Rep: Supplier)
