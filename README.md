@@ -23,7 +23,7 @@ graph TD
     BL --> BL2(Start selling)
     %% Top right - interactions for contractors
     BR --> BR1(Sign up)
-    BR --> BR2(login)
+    BR --> BR2(Login)
     BR --> BR3(Orders)
 
     %% Banners & Announcements
