@@ -10,13 +10,15 @@ graph TD
     A --> E(Categories)
     A --> F(Daily Discover / Flash Deals)
 
+    B --> BL(Suppliers)
+    B --> BR(Contractors)
     %% Top left - interaction for suppliers
-    B --> B1(Supplier Center)
-    B --> B2(Start selling)
+    BL --> BL1(Supplier Center)
+    BL --> BL2(Start selling)
     %% Top right - interactions for contractors
-    B --> B3(Sign up)
-    B --> B4(login)
-    B --> B5(Orders)
+    BR --> BR1(Sign up)
+    BR --> BR2(login)
+    BR --> BR3(Orders)
 
  
     D --> D1(Material Management - Rep: Materials Engineer)
