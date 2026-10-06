@@ -26,7 +26,11 @@ graph TD
     BR --> BR2(login)
     BR --> BR3(Orders)
 
- 
+    %% Banners & Announcements
+    C --> C1(Sponsored Ads - Suppliers)
+    C --> C2(System Updates / New Features)
+    C --> C3(Industry News & Tenders)
+     
     D --> D1(Material Management - Rep: Materials Engineer)
     D --> D2(Order & Delivery Tracking - Rep: Procurement Officer & Supplier)
     D --> D3(Dashboard - Rep: Project Manager)
