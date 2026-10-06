@@ -10,13 +10,31 @@ graph TD
     A --> E(Categories)
     A --> F(Daily Discover / Flash Deals)
 
-    %% Sub-items & Responsibilities
-    B --> B1(Supplier Center - Rep: Supplier)
-    B --> B2(Cart / Orders)
+    %% Top left - interaction for suppliers
+    B --> B1(Supplier Center)
+    B --> B2(Start selling)
+    %% Top right - interactions for contractors
+    B --> B3(Sign up)
+    B --> B4(login)
+    B --> B5 (Orders)
 
+ 
     D --> D1(Material Management - Rep: Materials Engineer)
     D --> D2(Order Processing - Rep: Procurement Officer)
     D --> D3(Dashboard - Rep: Project Manager)
+    %% Quick Link for Supplier:
+    D --> D4(Manage Quotes & Deliveries - Rep: Supplier)
 
-    E --> E1(Steel)
-    E --> E2(Cement)
+    %% Categories: By Material & By Supplier
+    E --> E_Mat(By Material)
+    E --> E_Sup(By Supplier)
+
+    E_Mat --> E1(Steel & Metals)
+    E_Mat --> E2(Cement & Concrete)
+    E_Mat --> E5(Sand, Stone & Bricks)
+    E_Mat --> E6(Wood & Formwork)
+    E_Mat --> E7(MEP & Accessories)
+    E_Mat --> E8(Paint & Waterproofing)
+
+    E_Sup --> E3(Supplier A)
+    E_Sup --> E4(Supplier B)
