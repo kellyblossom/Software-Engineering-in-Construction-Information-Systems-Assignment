@@ -38,8 +38,8 @@ graph TD
     D --> D4(Manage Quotes & Deliveries - Rep: Supplier)
 
     %% Categories: By Material & By Supplier
-    E --> E_Mat(By Material)
-    E --> E_Sup(By Supplier)
+    E --> E_Mat[By Material]
+    E --> E_Sup[By Supplier]
 
     E_Mat --> E1(Steel & Metals)
     E_Mat --> E2(Cement & Concrete)
