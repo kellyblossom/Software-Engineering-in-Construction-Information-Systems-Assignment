@@ -19,11 +19,11 @@ graph TD
     B --> BL(Suppliers)
     B --> BR(Contractors)
     %% Top left - interaction for suppliers
-    BL --> BL1(Supplier Center)
-    BL --> BL2(Start selling)
+    BL --> BL1([Supplier Center])
+    BL --> BL2([Start selling])
     %% Top right - interactions for contractors
-    BR --> BR1(Sign up)
-    BR --> BR2(Login)
+    BR --> BR1([Sign up])
+    BR --> BR2([Login])
     BR --> BR3(Orders)
 
     %% Banners & Announcements
