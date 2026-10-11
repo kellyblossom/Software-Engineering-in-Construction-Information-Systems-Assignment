@@ -10,7 +10,7 @@ graph TD
     classDef low fill:#e5f2ff,stroke:#333,stroke-width:2px,color:black;
 
     %% Main home page
-    A[Homepage] --> B(Header & Search)
+    A{{Homepage}} --> B(Header & Search)
     A --> C(Banners)
     A --> D(Quick Links)
     A --> E(Categories)
