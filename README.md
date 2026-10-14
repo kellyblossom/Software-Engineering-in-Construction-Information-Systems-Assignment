@@ -24,7 +24,8 @@ graph TD
     %% Top right - interactions for contractors
     BR --> BR1([Sign up])
     BR --> BR2([Login])
-    BR --> BR3(Orders)
+    BR --> BR3(Cart & Checkout)
+    BR --> BR4(Orders)
 
     %% Banners & Announcements
     C --> C1(Sponsored Ads - Suppliers)
@@ -53,7 +54,7 @@ graph TD
 
     %% Color
     %% Pink color (Highest priority - core MVP)
-    class A,B,BL,BR,BL1,BL2,BR1,BR2,BR3,D,D1,D2,D3,D4 high;
+    class A,B,BL,BR,BL1,BL2,BR1,BR2,BR3,BR4,D,D1,D2,D3,D4 high;
     
     %% Yellow color (Medium priority - Account, Categories)
     class E,E_Mat,E_Sup,E1,E2,E3,E4,E5,E6,E7,E8 med;
