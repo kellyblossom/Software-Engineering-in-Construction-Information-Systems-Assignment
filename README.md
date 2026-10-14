@@ -21,11 +21,14 @@ graph TD
     %% Top left - interaction for suppliers
     BL --> BL1([Supplier Center])
     BL --> BL2([Start selling])
+    BL --> BL3([Account Profile & Settings])
+    BL --> BL4([Received Orders & Quotes])
     %% Top right - interactions for contractors
     BR --> BR1([Sign up])
     BR --> BR2([Login])
     BR --> BR3(Cart & Checkout)
     BR --> BR4(Orders)
+    BR --> BR5([Account Profile & Settings])
 
     %% Banners & Announcements
     C --> C1(Sponsored Ads - Suppliers)
