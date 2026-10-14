@@ -16,25 +16,25 @@ graph LR
     A --> E(Categories)
     A --> F(Daily Discover / Flash Deals)
 
-    B --> BL(Suppliers)
-    B --> BR(Contractors)
+    B --> BS(Suppliers)
+    B --> BC(Contractors)
     %% Interaction for suppliers
-    BL --> BL1([Supplier Center])
-    BL --> BL2([Start selling])
+    BS --> BS1([Supplier Center])
+    BS --> BS2([Start selling])
 
-    BL1 -.-> BL_Portal{{Supplier Workspace}}
-    BL_Portal --> BL4(["Received Orders"]) 
-    BL_Portal --> BL3(["Account Profile & Settings"])
+    BS1 -.-> BS_Portal{{Supplier Workspace}}
+    BS_Portal --> BS4(["Received Orders"]) 
+    BS_Portal --> BS3(["Account Profile & Settings"])
 
 
     %% Interactions for contractors
-    BR --> BR1([Sign up])
-    BR --> BR2([Login])
+    BC --> BC1([Sign up])
+    BC --> BC2([Login])
 
-    BR2 -.-> BR_Portal{{Contractor Workspace}}
-    BR_Portal --> BR3(["Cart & Checkout"]) 
-    BR_Portal --> BR4(["My Orders"])
-    BR_Portal --> BR5(["Account Profile & Settings"])
+    BC2 -.-> BC_Portal{{Contractor Workspace}}
+    BC_Portal --> BC3(["Cart & Checkout"]) 
+    BC_Portal --> BC4(["My Orders"])
+    BC_Portal --> BC5(["Account Profile & Settings"])
 
     
     %% Banners & Announcements
@@ -46,14 +46,16 @@ graph LR
     D --> D1("Material Management<br>Rep: Materials Engineer")
     D --> D2("Order & Delivery Tracking<br>Rep: Procurement Officer & Supplier")
     D --> D3("Dashboard<br>Rep: Project Manager")
-    BR_Portal --> D1
-    BR_Portal --> D2
-    BR_Portal --> D3
+    %% Features in quick links can also access after logging in
+    BC_Portal --> D1
+    BC_Portal --> D2
+    BC_Portal --> D3
 
     %% Quick Link for Suppliers:
     D --> D4("Manage Quotes<br>Deliveries - Rep: Supplier")
-    BL_Portal --> D2
-    BL_Portal --> D4
+    %% Features in quick links can also access after logging in
+    BS_Portal --> D2
+    BS_Portal --> D4
 
     %% Categories: By Material & By Supplier
     E --> E_Mat[By Material]
@@ -71,7 +73,7 @@ graph LR
 
     %% Color
     %% Pink color (Highest priority - core MVP)
-     class A,B,BL,BR,BL1,BL2,BL3,BL4,BL_Portal,BR1,BR2,BR3,BR4,BR5,BR_Portal,D,D1,D2,D3,D4 high;
+     class A,B,BS,BC,BS1,BS2,BS3,BS4,BS_Portal,BC1,BC2,BC3,BC4,BC5,BC_Portal,D,D1,D2,D3,D4 high;
     
     %% Yellow color (Medium priority - Account, Categories)
     class E,E_Mat,E_Sup,E1,E2,E3,E4,E5,E6,E7,E8 med;
