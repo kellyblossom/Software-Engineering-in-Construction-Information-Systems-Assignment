@@ -32,11 +32,11 @@ graph TD
     C --> C2(System Updates / New Features)
     C --> C3(Industry News & Tenders)
      
-    D --> D1(Material Management - Rep: Materials Engineer)
-    D --> D2(Order & Delivery Tracking - Rep: Procurement Officer & Supplier)
-    D --> D3(Dashboard - Rep: Project Manager)
+    D --> D1("Material Management<br>Rep: Materials Engineer")
+    D --> D2("Order & Delivery Tracking<br>Rep: Procurement Officer & Supplier")
+    D --> D3("Dashboard<br>Rep: Project Manager")
     %% Quick Link for Supplier:
-    D --> D4(Manage Quotes & Deliveries - Rep: Supplier)
+    D --> D4("Manage Quotes<br>Deliveries - Rep: Supplier")
 
     %% Categories: By Material & By Supplier
     E --> E_Mat[By Material]
