@@ -2,7 +2,7 @@
 
 
 ```mermaid
-graph TD
+graph LR
 
     %% Color definition
     classDef high fill:#ffccd2,stroke:#ff4d6d,stroke-width:1px,color:black,font-size:26px;
