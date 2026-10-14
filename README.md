@@ -18,28 +18,42 @@ graph LR
 
     B --> BL(Suppliers)
     B --> BR(Contractors)
-    %% Top left - interaction for suppliers
+    %% Interaction for suppliers
     BL --> BL1([Supplier Center])
     BL --> BL2([Start selling])
-    BL --> BL3([Account Profile & Settings])
-    BL --> BL4([Received Orders & Quotes])
-    %% Top right - interactions for contractors
+
+    BL1 -.-> BL_Portal{{Supplier Workspace}}
+    BL_Portal --> BL4(["Received Orders"]) 
+    BL_Portal --> BL3(["Account Profile & Settings"])
+
+
+    %% Interactions for contractors
     BR --> BR1([Sign up])
     BR --> BR2([Login])
-    BR --> BR3([Cart & Checkout])
-    BR --> BR4([Orders])
-    BR --> BR5([Account Profile & Settings])
 
+    BR2 -.-> BR_Portal{{Contractor Workspace}}
+    BR_Portal --> BR3(["Cart & Checkout"]) 
+    BR_Portal --> BR4(["My Orders"])
+    BR_Portal --> BR5(["Account Profile & Settings"])
+
+    
     %% Banners & Announcements
     C --> C1(Sponsored Ads - Suppliers)
     C --> C2(System Updates / New Features)
     C --> C3(Industry News & Tenders)
-     
+
+     %% Quick Link for Contractors: 
     D --> D1("Material Management<br>Rep: Materials Engineer")
     D --> D2("Order & Delivery Tracking<br>Rep: Procurement Officer & Supplier")
     D --> D3("Dashboard<br>Rep: Project Manager")
-    %% Quick Link for Supplier:
+    BR_Portal --> D1
+    BR_Portal --> D2
+    BR_Portal --> D3
+
+    %% Quick Link for Suppliers:
     D --> D4("Manage Quotes<br>Deliveries - Rep: Supplier")
+    BL_Portal --> D2
+    BL_Portal --> D4
 
     %% Categories: By Material & By Supplier
     E --> E_Mat[By Material]
@@ -57,7 +71,7 @@ graph LR
 
     %% Color
     %% Pink color (Highest priority - core MVP)
-    class A,B,BL,BR,BL1,BL2,BL3,BL4,BR1,BR2,BR3,BR4,BR5,D,D1,D2,D3,D4 high;
+     class A,B,BL,BR,BL1,BL2,BL3,BL4,BL_Portal,BR1,BR2,BR3,BR4,BR5,BR_Portal,D,D1,D2,D3,D4 high;
     
     %% Yellow color (Medium priority - Account, Categories)
     class E,E_Mat,E_Sup,E1,E2,E3,E4,E5,E6,E7,E8 med;
