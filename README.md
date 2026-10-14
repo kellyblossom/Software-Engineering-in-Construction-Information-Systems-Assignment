@@ -26,8 +26,8 @@ graph LR
     %% Top right - interactions for contractors
     BR --> BR1([Sign up])
     BR --> BR2([Login])
-    BR --> BR3(Cart & Checkout)
-    BR --> BR4(Orders)
+    BR --> BR3([Cart & Checkout])
+    BR --> BR4([Orders])
     BR --> BR5([Account Profile & Settings])
 
     %% Banners & Announcements
