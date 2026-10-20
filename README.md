@@ -5,9 +5,9 @@
 graph LR
 
     %% Color definition
-    classDef high fill:#ffccd2,stroke:#ff4d6d,stroke-width:1.5px,color:black,padding:10px;
-    classDef med fill:#fff3cd,stroke:#ffc107,stroke-width:1.5px,color:black,padding:10px;
-    classDef low fill:#d1ecf1,stroke:#17a2b8,stroke-width:1.5px,color:black,padding:10px;
+    classDef high fill:#ffccd2,stroke:#ff4d6d,stroke-width:1.5px,color:black;
+    classDef med fill:#fff3cd,stroke:#ffc107,stroke-width:1.5px,color:black;
+    classDef low fill:#d1ecf1,stroke:#17a2b8,stroke-width:1.5px,color:black;
 
     %% Main home page
     A{{Homepage}} --> B(Header & Search)
