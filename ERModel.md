@@ -7,12 +7,14 @@
 
 ```mermaid
 erDiagram
+
 COMPANY_MVP {
-int CompanyID PK "MVP"
-string CompanyName "MVP"
-string TaxCode "MVP"
-string CompanyType "MVP: Contractor/Supplier"
-string Address "MVP"
+        int CompanyID PK "MVP"
+        int PlanID FK "Phase 2: Subscription Tier"
+        string CompanyName "MVP"
+        string TaxCode "MVP"
+        string CompanyType "MVP: Contractor/Supplier"
+        string Address "MVP"
     }
 
 USER_MVP {
@@ -61,6 +63,13 @@ QUOTE_ITEM_PHASE2 {
 CATEGORY_PHASE2 {
         int CategoryID PK "Phase 2"
         string CategoryName "Phase 2"
+    }
+
+SUBSCRIPTION_PLAN_PHASE2 {
+        int PlanID PK "Phase 2"
+        string PlanName "Phase 2: Free, Pro Tier, Enterprise"
+        float MonthlyFee "Phase 2: Monthly/Yearly Fee"
+        int MaxUsers "Phase 2: Maximum users"
     }
 
 BACKUP_PLAN_FUTURE {
