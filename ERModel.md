@@ -8,7 +8,8 @@
 ```mermaid
 erDiagram
 
-COMPANY_MVP {
+%% MVP ENTITIES (Core)
+    COMPANY_MVP {
         int CompanyID PK "MVP"
         int PlanID FK "Phase 2: Subscription Tier"
         string CompanyName "MVP"
@@ -19,21 +20,21 @@ COMPANY_MVP {
         date TrialEndDate "Phase 2: Expired date"
     }
 
-USER_MVP {
+    USER_MVP {
         int UserID PK "MVP"
         int CompanyID FK "MVP"
         string Email "MVP"
         string Role "MVP"
     }
 
-MATERIAL_MVP {
+    MATERIAL_MVP {
         int MaterialID PK "MVP"
         int SupplierID FK "MVP"
         string MaterialName "MVP"
         float BasePrice "MVP"
     }
 
-ORDER_MVP {
+    ORDER_MVP {
         int OrderID PK "MVP"
         int ContractorID FK "MVP"
         int CreatedBy_UserID FK "MVP"
@@ -41,14 +42,14 @@ ORDER_MVP {
         string Status "MVP: Pending, Approved"
     }
 
-ORDER_ITEM_MVP {
+    ORDER_ITEM_MVP {
         int OrderID PK, FK "MVP"
         int MaterialID PK, FK "MVP"
         int Quantity "MVP"
         float UnitPrice "MVP"
     }
 
-QUOTE_MVP {
+    QUOTE_MVP {
         int QuoteID PK "MVP"
         int OrderID FK "MVP"
         int SupplierID FK "MVP"
@@ -56,18 +57,20 @@ QUOTE_MVP {
         string Status "MVP"
     }
 
-QUOTE_ITEM_PHASE2 {
+%% PHASE 2 ENTITIES (Catalog & Subscription)
+
+    QUOTE_ITEM_PHASE2 {
         int QuoteID PK, FK "Phase 2"
         int MaterialID PK, FK "Phase 2"
         float QuotedUnitPrice "Phase 2"
     }
 
-CATEGORY_PHASE2 {
+    CATEGORY_PHASE2 {
         int CategoryID PK "Phase 2"
         string CategoryName "Phase 2"
     }
 
-SUBSCRIPTION_PLAN_PHASE2 {
+    SUBSCRIPTION_PLAN_PHASE2 {
         int PlanID PK "Phase 2"
         string PlanName "Phase 2: Freemium, Pro Tier, Enterprise"
         string BillingCycle "Phase 2: Free, Monthly, Yearly"
@@ -76,7 +79,9 @@ SUBSCRIPTION_PLAN_PHASE2 {
         float FeeAmount "Phase 2: Fixed amount"
     }
 
-BACKUP_PLAN_FUTURE {
+%% FUTURE SCOPE ENTITIES (Marketing, Content & Contingency)
+
+    BACKUP_PLAN_FUTURE {
         int PlanID PK "Future Scope"
         int PrimaryOrderID FK "Future Scope"
         int BackupSupplierID FK "Future Scope"
@@ -84,7 +89,7 @@ BACKUP_PLAN_FUTURE {
         string TriggerCondition "Future Scope: Trigger condition (e.g: 3-day delay)"
     }
 
-BANNER_AD_FUTURE {
+    BANNER_AD_FUTURE {
         int AdID PK "Future Scope"
         int SupplierID FK "Future Scope"
         string AdTitle "Future Scope"
@@ -93,7 +98,7 @@ BANNER_AD_FUTURE {
         date EndDate "Future Scope"
     }
 
-ANNOUNCEMENT_FUTURE {
+    ANNOUNCEMENT_FUTURE {
         int ArticleID PK "Future Scope"
         string Title "Future Scope"
         string Content "Future Scope"
