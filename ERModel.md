@@ -35,7 +35,7 @@ ORDER_MVP {
         int CreatedBy_UserID FK "MVP"
         date OrderDate "MVP"
         string Status "MVP: Pending, Approved"
-}
+    }
 
 ORDER_ITEM_MVP {
         int OrderID PK, FK "MVP"
@@ -67,6 +67,6 @@ BACKUP_PLAN_FUTURE {
         int PlanID PK "Future Scope"
         int PrimaryOrderID FK "Future Scope"
         int BackupSupplierID FK "Future Scope"
-        float Fee "Future Scope: "fee"
+        float Fee "Future Scope: fee"
         string TriggerCondition "Future Scope: Trigger condition (e.g: 3-day delay)"
     }
