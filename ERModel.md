@@ -15,6 +15,8 @@ COMPANY_MVP {
         string TaxCode "MVP"
         string CompanyType "MVP: Contractor/Supplier"
         string Address "MVP"
+        date SubscriptionStartDate "Phase 2: Starting date"
+        date TrialEndDate "Phase 2: Expired date"
     }
 
 USER_MVP {
@@ -67,9 +69,11 @@ CATEGORY_PHASE2 {
 
 SUBSCRIPTION_PLAN_PHASE2 {
         int PlanID PK "Phase 2"
-        string PlanName "Phase 2: Free, Pro Tier, Enterprise"
-        float MonthlyFee "Phase 2: Monthly/Yearly Fee"
-        int MaxUsers "Phase 2: Maximum users"
+        string PlanName "Phase 2: Freemium, Pro Tier, Enterprise"
+        string BillingCycle "Phase 2: Free, Monthly, Yearly"
+        int MaxProjects "Phase 2: 2 for Free, NULL for Unlimited"
+        int MaxSuppliers "Phase 2: 5 for Free, NULL for Unlimited"
+        float FeeAmount "Phase 2: Fixed amount"
     }
 
 BACKUP_PLAN_FUTURE {
@@ -79,3 +83,4 @@ BACKUP_PLAN_FUTURE {
         float Fee "Future Scope: fee"
         string TriggerCondition "Future Scope: Trigger condition (e.g: 3-day delay)"
     }
+
