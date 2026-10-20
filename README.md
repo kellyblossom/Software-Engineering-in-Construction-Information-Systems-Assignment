@@ -1,7 +1,5 @@
-# Assignment2-MVP
-
 # Build-Sync Construction Material Procurement Platform
-## 1. System Sitemap 
+## 1. System Sitemap - Assignment #2
 
 ```mermaid
 graph LR
@@ -99,7 +97,7 @@ graph LR
 
 ---
 
-## 2. Assignment 3 - Use Cases & Product Scope
+## 2. Use Cases & Product Scope - Assignment 3
 
 ###  Priority Tags Legend
 * ![#ffccd2](https://placehold.co/15x15/ffccd2/ffccd2.png) **[MVP]**: High Priority. Minimum Viable Product core features required for basic operations.
