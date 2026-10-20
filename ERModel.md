@@ -44,3 +44,10 @@ ORDER_ITEM_MVP {
         float UnitPrice "MVP"
     }
 
+QUOTE_MVP {
+        int QuoteID PK "MVP"
+        int OrderID FK "MVP"
+        int SupplierID FK "MVP"
+        float QuotedTotal "MVP"
+        string Status "MVP"
+    }
