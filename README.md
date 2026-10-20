@@ -87,14 +87,12 @@ graph LR
 
 ---
 
-## 2. Use Cases & Product Scope
-To fulfill the requirements for Assignment #3, the following use cases have been clearly distinguished between the Minimum Viable Product (MVP) scope and the full product scope using color-coded tags that match our system sitemap.
+## 2. Assignment 3 - Use Cases & Product Scope
 
 ###  Priority Tags Legend
-* **[MVP]**: High Priority. Minimum Viable Product core features required for basic B2B operations (Pink nodes).
-* **[Phase 2]**: Medium Priority. Important structural and catalog features to be implemented next (Yellow nodes).
-* **[Future Scope]**: Low Priority. Marketing, extensions, and supplementary features (Blue nodes).
-
+* ![#ffccd2](https://placehold.co/15x15/ffccd2/ffccd2.png) **[MVP]**: High Priority. Minimum Viable Product core features required for basic operations.
+* ![#fff3cd](https://placehold.co/15x15/fff3cd/fff3cd.png) **[Phase 2]**: Medium Priority. Important structural and catalog features to be implemented next.
+* ![#d1ecf1](https://placehold.co/15x15/d1ecf1/d1ecf1.png) **[Future Scope]**: Low Priority. Marketing, extensions, and supplementary features.
 ###  List of Use Cases
 
 **Authentication & Workspace Management**
