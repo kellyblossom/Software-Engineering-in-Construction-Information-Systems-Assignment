@@ -84,3 +84,41 @@ BACKUP_PLAN_FUTURE {
         string TriggerCondition "Future Scope: Trigger condition (e.g: 3-day delay)"
     }
 
+BANNER_AD_FUTURE {
+        int AdID PK "Future Scope"
+        int SupplierID FK "Future Scope"
+        string AdTitle "Future Scope"
+        string ImageURL "Future Scope"
+        date StartDate "Future Scope"
+        date EndDate "Future Scope"
+    }
+
+ANNOUNCEMENT_FUTURE {
+        int ArticleID PK "Future Scope"
+        string Title "Future Scope"
+        string Content "Future Scope"
+        date PublishDate "Future Scope"
+        string ArticleType "Future Scope: System, News, Tender"
+    }
+
+%% 1. Core MVP Relationships
+
+    COMPANY_MVP ||--o{ USER_MVP : "employs"
+    COMPANY_MVP ||--o{ MATERIAL_MVP : "supplies (if Supplier)"
+    COMPANY_MVP ||--o{ ORDER_MVP : "places (if Contractor)"
+    USER_MVP ||--o{ ORDER_MVP : "creates"
+    
+    ORDER_MVP ||--|{ ORDER_ITEM_MVP : "contains"
+    MATERIAL_MVP ||--o{ ORDER_ITEM_MVP : "is included in"
+    
+    ORDER_MVP ||--o{ QUOTE_MVP : "receives"
+    COMPANY_MVP ||--o{ QUOTE_MVP : "provides (if Supplier)"
+    
+%% 2. Phase 2: Catalog & Subscription Tiers
+    CATEGORY_PHASE2 ||--o{ MATERIAL_MVP : "categorizes"
+    SUBSCRIPTION_PLAN_PHASE2 ||--o{ COMPANY_MVP : "subscribed by"
+    
+%% 3. Future Scope: Supply Chain Contingency
+    ORDER_MVP ||--o| BACKUP_PLAN_FUTURE : "is protected by"
+    COMPANY_MVP ||--o{ BACKUP_PLAN_FUTURE : "serves as backup supplier"
+    COMPANY_MVP ||--o{ BANNER_AD_FUTURE : "sponsors ads (if Supplier)"
