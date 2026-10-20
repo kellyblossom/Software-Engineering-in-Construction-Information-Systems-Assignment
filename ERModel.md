@@ -21,3 +21,11 @@ USER_MVP {
         string Email "MVP"
         string Role "MVP"
     }
+
+MATERIAL_MVP {
+        int MaterialID PK "MVP"
+        int SupplierID FK "MVP"
+        string MaterialName "MVP"
+        float BasePrice "MVP"
+    }
+    
