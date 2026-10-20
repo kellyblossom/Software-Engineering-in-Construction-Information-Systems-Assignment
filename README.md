@@ -1,5 +1,7 @@
 # Assignment2-MVP
 
+# Build-Sync Construction Material Procurement Platform
+## 1. System Sitemap (Organization Chart)
 
 ```mermaid
 graph LR
@@ -80,3 +82,42 @@ graph LR
     
     %% Blue color (Low priority - Ads and more)
     class C,C1,C2,C3,F low;
+
+
+
+---
+
+## 2. Use Cases & Product Scope
+To fulfill the requirements for Assignment #3, the following use cases have been clearly distinguished between the Minimum Viable Product (MVP) scope and the full product scope using color-coded tags that match our system sitemap.
+
+###  Priority Tags Legend
+* **[MVP]**: High Priority. Minimum Viable Product core features required for basic B2B operations (Pink nodes).
+* **[Phase 2]**: Medium Priority. Important structural and catalog features to be implemented next (Yellow nodes).
+* **[Future Scope]**: Low Priority. Marketing, extensions, and supplementary features (Blue nodes).
+
+###  List of Use Cases
+
+**Authentication & Workspace Management**
+* Contractor: Sign up & Login to Contractor Workspace  **[MVP]**
+* Supplier: Start selling & Login to Supplier Workspace  **[MVP]**
+* Update Account Profile & Settings (Both roles)  **[MVP]**
+
+**Procurement & Order Fulfillment**
+* Contractor: Add materials to Cart & Checkout  **[MVP]**
+* Contractor: View and manage "My Orders"  **[MVP]**
+* Supplier: View "Received Orders" & Manage Quotes  **[MVP]**
+* Both Roles: Order & Delivery Tracking  **[MVP]**
+
+**Project & Material Control (Contractor side)**
+* Materials Engineer: Material Management **[MVP]**
+* Project Manager: Dashboard  **[MVP]**
+
+**Search & Catalog Navigation**
+* Global: Search for materials via Header Search bar  **[MVP]**
+* Global: Browse Categories By Material (Steel, Cement, MEP, etc.)  **[Phase 2]**
+* Global: Browse Categories By Supplier (Supplier A, Supplier B)  **[Phase 2]**
+
+**Marketing & Information**
+* Global: View Sponsored Ads from Suppliers  **[Future Scope]**
+* Global: Read System Updates & Industry News  **[Future Scope]**
+* Global: Hunt for Daily Discover / Flash Deals  **[Future Scope]**
