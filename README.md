@@ -108,30 +108,30 @@ graph LR
 ###  List of Use Cases
 
 **Authentication & Workspace Management**
-Contractor: Sign up & Login to Contractor Workspace  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
-Supplier: Start selling & Login to Supplier Workspace  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
-Update Account Profile & Settings (Both roles)  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
-Company: Manage Subscription & Billing (Upgrade Freemium, Pro, Enterprise) ![Phase 2](https://img.shields.io/badge/-Phase%202-fff3cd?style=flat)
+* Contractor: Sign up & Login to Contractor Workspace  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
+* Supplier: Start selling & Login to Supplier Workspace  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
+* Update Account Profile & Settings (Both roles)  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
+* Company: Manage Subscription & Billing (Upgrade Freemium, Pro, Enterprise) ![Phase 2](https://img.shields.io/badge/-Phase%202-fff3cd?style=flat)
 
 **Procurement & Order Fulfillment**
-Contractor: Add materials to Cart & Checkout ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
-Contractor: View and manage "My Orders" ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
-Supplier: View "Received Orders" & Manage Quotes  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
-Both Roles: Order & Delivery Tracking ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
-Contractor: Compare multiple quotes from different suppliers (Quote Comparison) ![Phase 2](https://img.shields.io/badge/-Phase%202-fff3cd?style=flat)
-Contractor: Purchase Backup Plan / Supply Chain Contingency ![Future Scope](https://img.shields.io/badge/-Future%20Scope-d1ecf1?style=flat)
-Supplier: Manage/Accept Backup Plan requests (Serve as Backup Supplier) ![Future Scope](https://img.shields.io/badge/-Future%20Scope-d1ecf1?style=flat)
+* Contractor: Add materials to Cart & Checkout ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
+* Contractor: View and manage "My Orders" ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
+* Supplier: View "Received Orders" & Manage Quotes  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
+* Both Roles: Order & Delivery Tracking ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
+* Contractor: Compare multiple quotes from different suppliers (Quote Comparison) ![Phase 2](https://img.shields.io/badge/-Phase%202-fff3cd?style=flat)
+* Contractor: Purchase Backup Plan / Supply Chain Contingency ![Future Scope](https://img.shields.io/badge/-Future%20Scope-d1ecf1?style=flat)
+* Supplier: Manage/Accept Backup Plan requests (Serve as Backup Supplier) ![Future Scope](https://img.shields.io/badge/-Future%20Scope-d1ecf1?style=flat)
 
 **Project & Material Control (Contractor side)**
-Materials Engineer: Material Management ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
-Project Manager: Dashboard  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
+* Materials Engineer: Material Management ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
+* Project Manager: Dashboard  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
 
 **Search & Catalog Navigation**
-Global: Search for materials via Header Search bar  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
-Global: View Pricing & Subscription Plans (Freemium, Pro, Enterprise) ![Phase 2](https://img.shields.io/badge/-Phase%202-fff3cd?style=flat)
-Global: Browse Categories By Material (Steel, Cement, MEP, etc.)  ![Phase 2](https://img.shields.io/badge/-Phase%202-fff3cd?style=flat)
-Global: Browse Categories By Supplier (Supplier A, Supplier B)  ![Phase 2](https://img.shields.io/badge/-Phase%202-fff3cd?style=flat)
+* Global: Search for materials via Header Search bar  ![MVP](https://img.shields.io/badge/-MVP-ffccd2?style=flat)
+* Global: View Pricing & Subscription Plans (Freemium, Pro, Enterprise) ![Phase 2](https://img.shields.io/badge/-Phase%202-fff3cd?style=flat)
+* Global: Browse Categories By Material (Steel, Cement, MEP, etc.)  ![Phase 2](https://img.shields.io/badge/-Phase%202-fff3cd?style=flat)
+* Global: Browse Categories By Supplier (Supplier A, Supplier B)  ![Phase 2](https://img.shields.io/badge/-Phase%202-fff3cd?style=flat)
 **Marketing & Information**
-Global: View Sponsored Ads from Suppliers  ![Future Scope](https://img.shields.io/badge/-Future%20Scope-d1ecf1?style=flat)
-Global: Read System Updates & Industry News  ![Future Scope](https://img.shields.io/badge/-Future%20Scope-d1ecf1?style=flat)
-Global: Hunt for Daily Discover / Flash Deals  ![Future Scope](https://img.shields.io/badge/-Future%20Scope-d1ecf1?style=flat)
+* Global: View Sponsored Ads from Suppliers  ![Future Scope](https://img.shields.io/badge/-Future%20Scope-d1ecf1?style=flat)
+* Global: Read System Updates & Industry News  ![Future Scope](https://img.shields.io/badge/-Future%20Scope-d1ecf1?style=flat)
+* Global: Hunt for Daily Discover / Flash Deals  ![Future Scope](https://img.shields.io/badge/-Future%20Scope-d1ecf1?style=flat)
