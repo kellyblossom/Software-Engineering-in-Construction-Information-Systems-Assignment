@@ -119,11 +119,13 @@ erDiagram
     ORDER_MVP ||--o{ QUOTE_MVP : "receives"
     COMPANY_MVP ||--o{ QUOTE_MVP : "provides (if Supplier)"
     
-%% 2. Phase 2: Catalog & Subscription Tiers
+%% 2. Phase 2: Catalog & SaaS Subscription Tiers
+
     CATEGORY_PHASE2 ||--o{ MATERIAL_MVP : "categorizes"
     SUBSCRIPTION_PLAN_PHASE2 ||--o{ COMPANY_MVP : "subscribed by"
     
-%% 3. Future Scope: Supply Chain Contingency
+%% 3. Future Scope: Contingency & Marketing
+
     ORDER_MVP ||--o| BACKUP_PLAN_FUTURE : "is protected by"
     COMPANY_MVP ||--o{ BACKUP_PLAN_FUTURE : "serves as backup supplier"
     COMPANY_MVP ||--o{ BANNER_AD_FUTURE : "sponsors ads (if Supplier)"
