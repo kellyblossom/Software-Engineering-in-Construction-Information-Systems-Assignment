@@ -51,3 +51,22 @@ QUOTE_MVP {
         float QuotedTotal "MVP"
         string Status "MVP"
     }
+
+QUOTE_ITEM_PHASE2 {
+        int QuoteID PK, FK "Phase 2"
+        int MaterialID PK, FK "Phase 2"
+        float QuotedUnitPrice "Phase 2"
+    }
+
+CATEGORY_PHASE2 {
+        int CategoryID PK "Phase 2"
+        string CategoryName "Phase 2"
+    }
+
+BACKUP_PLAN_FUTURE {
+        int PlanID PK "Future Scope"
+        int PrimaryOrderID FK "Future Scope"
+        int BackupSupplierID FK "Future Scope"
+        float Fee "Future Scope: "fee"
+        string TriggerCondition "🔵 Future Scope: Trigger condition (e.g: 3-day delay)"
+    }
