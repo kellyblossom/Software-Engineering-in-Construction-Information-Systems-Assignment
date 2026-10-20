@@ -123,6 +123,8 @@ erDiagram
 
     CATEGORY_PHASE2 ||--o{ MATERIAL_MVP : "categorizes"
     SUBSCRIPTION_PLAN_PHASE2 ||--o{ COMPANY_MVP : "subscribed by"
+    QUOTE_MVP ||--|{ QUOTE_ITEM_PHASE2 : "includes line items"
+    MATERIAL_MVP ||--o{ QUOTE_ITEM_PHASE2 : "is priced in"
     
 %% 3. Future Scope: Contingency & Marketing
 
