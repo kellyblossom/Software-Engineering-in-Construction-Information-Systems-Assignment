@@ -82,7 +82,7 @@ graph LR
     
     %% Blue color (Low priority - Ads and more)
     class C,C1,C2,C3,F low;
-
+```
 
 
 ---
