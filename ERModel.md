@@ -68,5 +68,5 @@ BACKUP_PLAN_FUTURE {
         int PrimaryOrderID FK "Future Scope"
         int BackupSupplierID FK "Future Scope"
         float Fee "Future Scope: "fee"
-        string TriggerCondition "🔵 Future Scope: Trigger condition (e.g: 3-day delay)"
+        string TriggerCondition "Future Scope: Trigger condition (e.g: 3-day delay)"
     }
