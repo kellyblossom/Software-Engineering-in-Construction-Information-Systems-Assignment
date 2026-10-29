@@ -30,6 +30,7 @@ erDiagram
     MATERIAL_MVP {
         int MaterialID PK "MVP"
         int SupplierID FK "MVP"
+        int CategoryID FK "MVP"
         string MaterialName "MVP"
         float BasePrice "MVP"
     }
