@@ -44,6 +44,23 @@
             overflow: hidden;
         }
 
+        .marketplace-featured-row {
+            height: 270px;
+        }
+
+        .marketplace-featured-row > [class*="col-"] {
+            height: 100%;
+        }
+
+        .marketplace-featured-row .marketplace-hero {
+            height: 100%;
+        }
+
+        .marketplace-featured-row .marketplace-promo {
+            flex: 1 1 0;
+            min-height: 0;
+        }
+
         .marketplace-hero .hero-accent {
             color: #ffc857;
         }
@@ -130,9 +147,21 @@
             box-shadow: 0 0.25rem 0.75rem rgba(23, 50, 77, 0.14);
         }
 
-        @media (max-width: 767.98px) {
+        @media (max-width: 991.98px) {
             .marketplace-hero {
                 min-height: 230px;
+            }
+
+            .marketplace-featured-row {
+                height: auto;
+            }
+
+            .marketplace-featured-row > [class*="col-"] {
+                height: auto;
+            }
+
+            .marketplace-featured-row .marketplace-promo {
+                min-height: 130px;
             }
         }
     </style>
@@ -195,7 +224,7 @@
     </header>
 
     <main class="container-lg py-4">
-        <section class="row g-2 mb-4" aria-label="Featured procurement services">
+        <section class="marketplace-featured-row row g-2 mb-4" aria-label="Featured procurement services">
             <div class="col-lg-8">
                 <div class="marketplace-hero rounded-2 text-white d-flex align-items-center p-4 p-md-5">
                     <img class="hero-image" src="/images/construction-hero.svg" alt="Construction project at a building site">
