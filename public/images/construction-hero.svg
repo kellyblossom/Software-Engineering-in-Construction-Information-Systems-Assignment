@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title">
+  <title id="title">Construction site with a crane and building</title>
+  <rect width="800" height="520" fill="#74a7ad"/>
+  <circle cx="650" cy="95" r="58" fill="#ffc857" opacity=".9"/>
+  <path d="M0 350L150 250l130 75 140-130 180 135 200-170v360H0z" fill="#2d6971"/>
+  <path d="M330 520V252h260v268z" fill="#d9b38c"/>
+  <path d="M300 252h320l-30-30H330z" fill="#f0d2a8"/>
+  <g fill="#2d4d67">
+    <rect x="370" y="290" width="55" height="70"/><rect x="485" y="290" width="55" height="70"/>
+    <rect x="370" y="390" width="55" height="70"/><rect x="485" y="390" width="55" height="70"/>
+  </g>
+  <g stroke="#efe4c5" stroke-width="7">
+    <path d="M397 290v70M370 325h55M512 290v70M485 325h55M397 390v70M370 425h55M512 390v70M485 425h55"/>
+  </g>
+  <path d="M0 430h800v90H0z" fill="#315765"/>
+  <g stroke="#efb62d" stroke-width="12" stroke-linecap="square">
+    <path d="M140 430V95M140 95h355M140 150h275"/>
+  </g>
+  <g fill="#efb62d"><rect x="130" y="85" width="20" height="345"/><rect x="140" y="85" width="355" height="16"/></g>
+  <path d="M495 101v95" stroke="#263d50" stroke-width="5"/>
+  <path d="M495 196h55v22h-55z" fill="#263d50"/>
+  <g fill="#f7f1df"><rect x="40" y="390" width="95" height="18"/><rect x="55" y="408" width="65" height="22"/></g>
+  <path d="M650 430h125l-25-55h-75z" fill="#ffc857"/>
+  <rect x="720" y="350" width="12" height="80" fill="#263d50"/>
+</svg>

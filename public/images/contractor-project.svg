@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-labelledby="title">
+  <title id="title">Contractor reviewing construction plans</title>
+  <rect width="600" height="260" fill="#79a8b4"/>
+  <rect y="210" width="600" height="50" fill="#315c75"/>
+  <path d="M55 210V85l145-55 145 55v125z" fill="#dfe9e8"/>
+  <g stroke="#79a8b4" stroke-width="8" fill="none">
+    <path d="M55 85l145 55 145-55M200 30v210"/>
+  </g>
+  <g fill="#315c75">
+    <rect x="105" y="125" width="70" height="85"/><rect x="245" y="125" width="70" height="85"/>
+  </g>
+  <rect x="380" y="65" width="170" height="145" rx="8" fill="#f4f8f7"/>
+  <g stroke="#ffc857" stroke-width="6" fill="none">
+    <path d="M405 95h120M405 125h85M405 155h120M405 185h55"/>
+  </g>
+  <circle cx="345" cy="95" r="38" fill="#17324d"/>
+  <path d="M300 210c8-68 32-98 45-98s38 30 46 98z" fill="#17324d"/>
+  <path d="M315 122l30 35 31-35" fill="#f0bb7b"/>
+</svg>

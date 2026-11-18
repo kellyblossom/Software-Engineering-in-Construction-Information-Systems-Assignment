@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-labelledby="title">
+  <title id="title">Supplier warehouse with stacked materials</title>
+  <rect width="600" height="260" fill="#df9a62"/>
+  <path d="M0 210h600v50H0z" fill="#8c4e32"/>
+  <path d="M70 45h460l35 165H35z" fill="#c85f32"/>
+  <path d="M100 70h400v140H100z" fill="#f2bd82"/>
+  <g fill="#b56b3c">
+    <rect x="125" y="105" width="85" height="105"/><rect x="225" y="125" width="70" height="85"/>
+    <rect x="310" y="95" width="105" height="115"/><rect x="430" y="145" width="55" height="65"/>
+  </g>
+  <g fill="#f2d3a6">
+    <rect x="135" y="115" width="65" height="18"/><rect x="135" y="143" width="65" height="18"/>
+    <rect x="320" y="105" width="85" height="18"/><rect x="320" y="133" width="85" height="18"/>
+  </g>
+  <g fill="#285067">
+    <rect x="0" y="205" width="600" height="55"/>
+  </g>
+  <path d="M30 205h150l-20-40H50z" fill="#ffc857"/>
+  <rect x="65" y="155" width="15" height="50" fill="#ffc857"/>
+  <circle cx="85" cy="215" r="15" fill="#17324d"/><circle cx="150" cy="215" r="15" fill="#17324d"/>
+</svg>
