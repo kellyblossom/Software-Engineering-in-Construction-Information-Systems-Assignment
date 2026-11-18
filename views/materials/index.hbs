@@ -1,0 +1,90 @@
+<h3 class="mb-3"><i class="bi bi-box-seam"></i> Material Management & Catalog (Story a)</h3>
+
+{{#if errorMsg}}
+<div class="alert alert-danger">{{errorMsg}}</div>
+{{/if}}
+
+<!-- E: Categories Filter (By Material & By Supplier) -->
+<div class="mb-3 d-flex flex-wrap gap-2 align-items-center bg-white p-2 rounded border">
+    <span class="fw-bold me-2">Filter By Category:</span>
+    <button class="btn btn-sm btn-outline-dark" hx-get="/materials" hx-target="#main">All</button>
+    {{#each categories}}
+    <button class="btn btn-sm btn-outline-primary" hx-get="/materials?categoryID={{CategoryID}}" hx-target="#main">
+        {{CategoryName}}
+    </button>
+    {{/each}}
+</div>
+
+<!-- Form Add new materials (Supplier posts products) -->
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-primary text-white fw-bold">Post New Construction Material (Supplier CRUD)</div>
+    <div class="card-body">
+        <form hx-post="/materials/add" hx-target="#main" class="row g-2">
+            <div class="col-md-3">
+                <select name="SupplierID" class="form-select" required>
+                    <option value="">-- Select Supplier --</option>
+                    {{#each suppliers}}
+                    <option value="{{CompanyID}}">{{CompanyName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select name="CategoryID" class="form-select" required>
+                    {{#each categories}}
+                    <option value="{{CategoryID}}">{{CategoryName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="MaterialName" class="form-control" placeholder="Material Name (e.g. Rebar D16)" required>
+            </div>
+            <div class="col-md-2">
+                <input type="number" step="0.01" name="BasePrice" class="form-control" placeholder="Base Price ($)" required>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-success w-100"><i class="bi bi-plus-lg"></i> Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Materials list (Allow to directly adjust / delete) -->
+<table class="table table-bordered bg-white shadow-sm align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Supplier</th>
+            <th>CategoryID</th>
+            <th>Material Name</th>
+            <th>Base Price ($)</th>
+            <th>CRUD Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each materials}}
+        <tr>
+            <td>#{{MaterialID}}</td>
+            <td>{{SupplierName}} ({{CategoryName}})</td>
+            <td colspan="4">
+                <form hx-post="/materials/edit/{{MaterialID}}" hx-target="#main" class="row g-2 align-items-center">
+                    <div class="col-md-2">
+                        <input type="number" name="CategoryID" value="{{CategoryID}}" class="form-control form-control-sm" title="Category ID">
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" name="MaterialName" value="{{MaterialName}}" class="form-control form-control-sm" required>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" step="0.01" name="BasePrice" value="{{BasePrice}}" class="form-control form-control-sm" required>
+                    </div>
+                    <div class="col-md-2 d-flex gap-1">
+                        <button type="submit" class="btn btn-sm btn-success" title="Update"><i class="bi bi-check-lg"></i></button>
+                        <button type="button" class="btn btn-sm btn-danger" hx-post="/materials/delete/{{MaterialID}}" hx-target="#main" title="Delete">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

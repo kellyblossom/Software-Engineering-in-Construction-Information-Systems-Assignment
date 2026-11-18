@@ -1,0 +1,84 @@
+<!-- Quick Links & Banner Overview theo Sitemap -->
+<div class="p-4 mb-4 bg-white rounded-3 shadow-sm border-start border-warning border-5">
+    <h3 class="fw-bold">Build-Sync Construction Material Procurement Platform</h3>
+    <p class="text-muted mb-3">B2B Supply Chain & Quotation Management System for Contractors and Suppliers</p>
+    <div class="d-flex flex-wrap gap-2">
+        <button class="btn btn-primary" hx-get="/materials" hx-target="#main">
+            <i class="bi bi-tools"></i> Material Management (Materials Engineer)
+        </button>
+        <button class="btn btn-info text-white" hx-get="/orders" hx-target="#main">
+            <i class="bi bi-file-earmark-spreadsheet"></i> Contractor RFQs & Cart
+        </button>
+        <button class="btn btn-warning" hx-get="/supplier" hx-target="#main">
+            <i class="bi bi-receipt"></i> Supplier Quotes & Received Orders
+        </button>
+        <button class="btn btn-secondary" hx-get="/companies" hx-target="#main">
+            <i class="bi bi-building-add"></i> Sign Up / Start Selling
+        </button>
+    </div>
+</div>
+
+<!-- D3: Project Manager Dashboard -->
+<div class="row g-3 mb-4 text-center">
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 bg-primary text-white p-3">
+            <h2>{{stats.totalMaterials}}</h2>
+            <div>Catalog Materials</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 bg-info text-white p-3">
+            <h2>{{stats.totalOrders}}</h2>
+            <div>Contractor Orders / RFQs</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 bg-warning text-dark p-3">
+            <h2>{{stats.totalQuotes}}</h2>
+            <div>Submitted Quotes</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 bg-success text-white p-3">
+            <h2>{{stats.totalCompanies}}</h2>
+            <div>Partner Companies</div>
+        </div>
+    </div>
+</div>
+
+<!-- D2: Order & Delivery Tracking -->
+<div class="card shadow-sm">
+    <div class="card-header bg-dark text-white fw-bold">
+        <i class="bi bi-truck"></i> Live Order & RFQ Status Tracking (Procurement Officer & Supplier)
+    </div>
+    <div class="card-body p-0">
+        <table class="table table-hover mb-0 align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Order ID</th>
+                    <th>Contractor</th>
+                    <th>Order Date</th>
+                    <th>Received Quotes</th>
+                    <th>Current Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each orders}}
+                <tr>
+                    <td class="fw-bold">#{{OrderID}}</td>
+                    <td>{{ContractorName}}</td>
+                    <td>{{OrderDate}}</td>
+                    <td><span class="badge bg-secondary">{{QuoteCount}} quotes</span></td>
+                    <td><span class="badge bg-primary">{{Status}}</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary" hx-get="/orders/{{OrderID}}/items" hx-target="#main">
+                            View Details
+                        </button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

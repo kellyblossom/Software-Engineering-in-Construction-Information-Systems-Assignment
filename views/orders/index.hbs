@@ -1,0 +1,105 @@
+<h3 class="mb-3"><i class="bi bi-cart-check"></i> Contractor Workspace: RFQs, My Orders & Compare Quotes (Story b & d)</h3>
+
+<!-- New Order / new RFQ  -->
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-info text-white fw-bold">BC3/BC4: Create New Order / Request for Quotation (Draft)</div>
+    <div class="card-body">
+        <form hx-post="/orders/add" hx-target="#main" class="row g-2">
+            <div class="col-md-5">
+                <select name="ContractorID" class="form-select" required>
+                    <option value="">-- Select Contractor Company --</option>
+                    {{#each contractors}}
+                    <option value="{{CompanyID}}">{{CompanyName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="col-md-5">
+                <input type="date" name="OrderDate" class="form-control" required>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100"><i class="bi bi-plus-circle"></i> Create RFQ</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- List of Orders / RFQs (only edit/delete before sending to Supplier) -->
+<h5>My Orders / RFQs (Note: Can only Update/Delete while in 'Draft' before sending to Suppliers!)</h5>
+<table class="table table-bordered bg-white shadow-sm align-middle mb-5">
+    <thead class="table-dark">
+        <tr>
+            <th>Order ID</th>
+            <th>Contractor</th>
+            <th>Order Date (Editable if Draft)</th>
+            <th>Status</th>
+            <th>Manage Cart & RFQ Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each orders}}
+        <tr>
+            <td class="fw-bold">#{{OrderID}}</td>
+            <td>{{ContractorName}}</td>
+            <td>
+                {{#if isDraft}}
+                <form hx-post="/orders/edit/{{OrderID}}" hx-target="#main" class="d-flex gap-1">
+                    <input type="date" name="OrderDate" value="{{OrderDate}}" class="form-control form-control-sm" required>
+                    <button type="submit" class="btn btn-sm btn-success">Save</button>
+                </form>
+                {{else}}
+                {{OrderDate}} <span class="badge bg-light text-muted border">Locked</span>
+                {{/if}}
+            </td>
+            <td><span class="badge bg-secondary">{{Status}}</span></td>
+            <td class="d-flex gap-2">
+                <button class="btn btn-sm btn-primary" hx-get="/orders/{{OrderID}}/items" hx-target="#main">
+                    <i class="bi bi-cart4"></i> Cart Items
+                </button>
+                {{#if isDraft}}
+                <button class="btn btn-sm btn-warning" hx-post="/orders/send/{{OrderID}}" hx-target="#main">
+                    <i class="bi bi-send-fill"></i> Send RFQ to Suppliers
+                </button>
+                <button class="btn btn-sm btn-danger" hx-post="/orders/delete/{{OrderID}}" hx-target="#main">
+                    <i class="bi bi-trash"></i> Delete
+                </button>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<!-- BC5: Compare Quotes & Select Winning Supplier (Story d) -->
+<h5><i class="bi bi-award"></i> BC5: Compare Received Quotations & Make Decision (Story d)</h5>
+<table class="table table-bordered bg-white shadow-sm align-middle">
+    <thead class="table-secondary">
+        <tr>
+            <th>Quote ID</th>
+            <th>For Order ID</th>
+            <th>Supplier Company</th>
+            <th>Quoted Total ($)</th>
+            <th>Quote Status</th>
+            <th>Contractor Decision</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each quotes}}
+        <tr>
+            <td>#{{QuoteID}}</td>
+            <td class="fw-bold">Order #{{OrderID}}</td>
+            <td>{{SupplierName}}</td>
+            <td class="fw-bold text-success">${{QuotedTotal}}</td>
+            <td><span class="badge bg-info text-dark">{{Status}}</span></td>
+            <td>
+                {{#if isPending}}
+                <button class="btn btn-sm btn-success" hx-post="/orders/approve-quote/{{QuoteID}}/{{OrderID}}" hx-target="#main">
+                    <i class="bi bi-check2-circle"></i> Accept Quote & Approve Order
+                </button>
+                {{else}}
+                <span class="text-muted">Finalized ({{Status}})</span>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

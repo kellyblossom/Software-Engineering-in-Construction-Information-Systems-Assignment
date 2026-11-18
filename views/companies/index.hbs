@@ -1,0 +1,64 @@
+<h3 class="mb-3"><i class="bi bi-person-gear"></i> Companies Onboarding & Account Profile Settings (BC1, BS2, BC7, BS4)</h3>
+
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-dark text-white fw-bold">Register New Company (Contractor Sign Up / Supplier Start Selling)</div>
+    <div class="card-body">
+        <form hx-post="/companies/add" hx-target="#main" class="row g-2">
+            <div class="col-md-3">
+                <input type="text" name="CompanyName" class="form-control" placeholder="Company Name" required>
+            </div>
+            <div class="col-md-2">
+                <input type="text" name="TaxCode" class="form-control" placeholder="Tax Code" required>
+            </div>
+            <div class="col-md-3">
+                <select name="CompanyType" class="form-select" required>
+                    <option value="Contractor">Contractor (Buyer)</option>
+                    <option value="Supplier">Supplier (Seller)</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="Address" class="form-control" placeholder="Address" required>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-primary w-100">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table table-bordered bg-white shadow-sm align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Role</th>
+            <th>Company Name, Tax Code & Address (Profile Settings)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each companies}}
+        <tr>
+            <td>#{{CompanyID}}</td>
+            <td><span class="badge bg-secondary">{{CompanyType}}</span></td>
+            <td>
+                <form hx-post="/companies/edit/{{CompanyID}}" hx-target="#main" class="row g-2">
+                    <div class="col-md-4">
+                        <input type="text" name="CompanyName" value="{{CompanyName}}" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="TaxCode" value="{{TaxCode}}" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="Address" value="{{Address}}" class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-2 d-flex gap-1">
+                        <button type="submit" class="btn btn-sm btn-success">Save</button>
+                        <button type="button" class="btn btn-sm btn-danger" hx-post="/companies/delete/{{CompanyID}}" hx-target="#main">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

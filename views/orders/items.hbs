@@ -1,0 +1,57 @@
+<div class="mb-3">
+    <button class="btn btn-secondary btn-sm" hx-get="/orders" hx-target="#main">← Back to Contractor Workspace</button>
+</div>
+
+<h4>BC3: Cart & Material Items for Order #{{order.OrderID}} (Status: <span class="badge bg-primary">{{order.Status}}</span>)</h4>
+
+{{#if order.isDraft}}
+<div class="card my-3 shadow-sm">
+    <div class="card-header bg-dark text-white">Add Material to Order / RFQ</div>
+    <div class="card-body">
+        <form hx-post="/orders/{{order.OrderID}}/items/add" hx-target="#main" class="row g-2">
+            <div class="col-md-7">
+                <select name="MaterialID" class="form-select" required>
+                    {{#each materials}}
+                    <option value="{{MaterialID}}">{{MaterialName}} (Base Price: ${{BasePrice}})</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input type="number" name="Quantity" class="form-control" placeholder="Quantity" min="1" required>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100">Add / Update Qty</button>
+            </div>
+        </form>
+    </div>
+</div>
+{{/if}}
+
+<table class="table table-bordered bg-white shadow-sm align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Material Name</th>
+            <th>Quantity</th>
+            <th>Unit Price ($)</th>
+            <th>Subtotal ($)</th>
+            {{#if order.isDraft}}<th>Remove</th>{{/if}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each items}}
+        <tr>
+            <td>{{MaterialName}}</td>
+            <td>{{Quantity}}</td>
+            <td>${{UnitPrice}}</td>
+            <td class="fw-bold">${{SubTotal}}</td>
+            {{#if ../order.isDraft}}
+            <td>
+                <button class="btn btn-sm btn-danger" hx-post="/orders/{{../order.OrderID}}/items/delete/{{MaterialID}}" hx-target="#main">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
+            {{/if}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

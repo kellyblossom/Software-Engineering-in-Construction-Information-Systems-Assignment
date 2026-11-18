@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bootstrap": "^5.3.9",
+    "bootstrap-icons": "^1.13.2",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.3.0",
+    "express-handlebars": "^9.0.6",
+    "htmx.org": "^4.0.1",
+    "mysql2": "^3.24.6"
+  }
+}

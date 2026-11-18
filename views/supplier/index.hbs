@@ -1,0 +1,107 @@
+<h3 class="mb-3"><i class="bi bi-truck"></i> Supplier Workspace: Received Orders & Manage Quotes (Story c)</h3>
+
+<!-- BS3: Received Orders from Contractors -->
+<h5>BS3: Received Orders / RFQs Waiting for Quotation</h5>
+<table class="table table-bordered bg-white shadow-sm align-middle mb-4">
+    <thead class="table-dark">
+        <tr>
+            <th>Order / RFQ ID</th>
+            <th>Contractor</th>
+            <th>Order Date</th>
+            <th>Estimated Base Value ($)</th>
+            <th>Status</th>
+            <th>Inspect Items</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each receivedOrders}}
+        <tr>
+            <td class="fw-bold">#{{OrderID}}</td>
+            <td>{{ContractorName}}</td>
+            <td>{{OrderDate}}</td>
+            <td>${{EstimatedTotal}}</td>
+            <td><span class="badge bg-warning text-dark">{{Status}}</span></td>
+            <td>
+                <button class="btn btn-sm btn-outline-info" hx-get="/orders/{{OrderID}}/items" hx-target="#main">
+                    View Requested Materials
+                </button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<!-- D4: Form Gửi Báo Giá (Send Quotation) -->
+<div class="card mb-4 shadow-sm">
+    <div class="card-header bg-warning text-dark fw-bold">D4: Submit Quotation for an Order / RFQ</div>
+    <div class="card-body">
+        <form hx-post="/supplier/quote/add" hx-target="#main" class="row g-2">
+            <div class="col-md-4">
+                <select name="OrderID" class="form-select" required>
+                    <option value="">-- Select Received Order/RFQ --</option>
+                    {{#each receivedOrders}}
+                    <option value="{{OrderID}}">Order #{{OrderID}} ({{ContractorName}})</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="col-md-4">
+                <select name="SupplierID" class="form-select" required>
+                    <option value="">-- Select Your Supplier Company --</option>
+                    {{#each suppliers}}
+                    <option value="{{CompanyID}}">{{CompanyName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input type="number" step="0.01" name="QuotedTotal" class="form-control" placeholder="Your Quoted Total ($)" required>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-dark w-100">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Quản lý các Báo giá đã gửi (CRUD Quotes) -->
+<h5>Manage Submitted Quotations</h5>
+<table class="table table-bordered bg-white shadow-sm align-middle">
+    <thead class="table-secondary">
+        <tr>
+            <th>Quote ID</th>
+            <th>Order ID</th>
+            <th>Supplier</th>
+            <th>Quoted Total ($)</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each quotes}}
+        <tr>
+            <td>#{{QuoteID}}</td>
+            <td>Order #{{OrderID}}</td>
+            <td>{{SupplierName}}</td>
+            <td>
+                {{#if isPending}}
+                <form hx-post="/supplier/quote/edit/{{QuoteID}}" hx-target="#main" class="d-flex gap-1">
+                    <input type="number" step="0.01" name="QuotedTotal" value="{{QuotedTotal}}" class="form-control form-control-sm">
+                    <button type="submit" class="btn btn-sm btn-success">Update</button>
+                </form>
+                {{else}}
+                ${{QuotedTotal}}
+                {{/if}}
+            </td>
+            <td><span class="badge bg-info text-dark">{{Status}}</span></td>
+            <td>
+                {{#if isPending}}
+                <button class="btn btn-sm btn-danger" hx-post="/supplier/quote/delete/{{QuoteID}}" hx-target="#main">
+                    <i class="bi bi-trash"></i> Withdraw
+                </button>
+                {{else}}
+                <span class="text-muted">Locked</span>
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

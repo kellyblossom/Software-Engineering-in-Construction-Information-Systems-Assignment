@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap-icons.min.css">
+    <script src="/htmx.min.js"></script>
+    <script src="/bootstrap.bundle.min.js"></script>
+    <style>
+        .marketplace-header {
+            background: #17324d;
+        }
+
+        .marketplace-utility {
+            background: #10263a;
+            font-size: 0.8rem;
+        }
+
+        .marketplace-utility a {
+            color: #e8eef3;
+            text-decoration: none;
+        }
+
+        .marketplace-utility a:hover {
+            color: #ffc857;
+        }
+
+        .marketplace-search .form-control {
+            border: 0;
+        }
+
+        .marketplace-search .btn {
+            border-color: #ffc857;
+            background: #ffc857;
+            color: #17324d;
+        }
+
+        .marketplace-hero {
+            min-height: 270px;
+            background: linear-gradient(115deg, #17324d 0%, #245a68 58%, #438a7a 100%);
+        }
+
+        .marketplace-hero .hero-accent {
+            color: #ffc857;
+        }
+
+        .marketplace-promo {
+            min-height: 130px;
+            background: linear-gradient(120deg, #a84826, #e78b45);
+        }
+
+        .marketplace-promo-alt {
+            background: linear-gradient(120deg, #315c75, #4a8ca0);
+        }
+
+        .marketplace-shortcut {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .marketplace-shortcut .shortcut-icon {
+            width: 52px;
+            height: 52px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e3e8ec;
+            border-radius: 14px;
+            color: #17324d;
+            background: #fff;
+            font-size: 1.4rem;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .marketplace-shortcut:hover .shortcut-icon {
+            transform: translateY(-2px);
+            box-shadow: 0 0.25rem 0.75rem rgba(23, 50, 77, 0.14);
+        }
+
+        @media (max-width: 767.98px) {
+            .marketplace-hero {
+                min-height: 230px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <header class="marketplace-header text-white shadow-sm">
+        <div class="marketplace-utility">
+            <div class="container-lg d-flex justify-content-between align-items-center py-2">
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#" hx-get="/supplier" hx-target="#main">Supplier</a>
+                    <a href="#" hx-get="/companies" hx-target="#main">Join as a Partner</a>
+                    <a href="#" hx-get="/materials" hx-target="#main">Browse Materials</a>
+                </div>
+                <a class="d-none d-sm-inline" href="#" hx-get="/companies" hx-target="#main">
+                    <i class="bi bi-building me-1"></i>Partner Accounts
+                </a>
+            </div>
+        </div>
+
+        <div class="container-lg py-3">
+            <div class="d-flex align-items-center gap-3 gap-lg-4">
+                <a class="navbar-brand fw-bold text-white mb-0 flex-shrink-0" href="#" hx-get="/" hx-target="#main">
+                    <i class="bi bi-buildings-fill text-warning"></i> Build-Sync
+                </a>
+
+                <form class="marketplace-search input-group" hx-get="/materials" hx-target="#main">
+                    <input class="form-control" type="search" name="keyword" placeholder="Search construction materials..." aria-label="Search construction materials">
+                    <button class="btn px-3" type="submit" aria-label="Search">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+
+                <a class="text-white fs-4 px-1" href="#" hx-get="/orders" hx-target="#main" aria-label="Contractor " title="Contractor ">
+                    <i class="bi bi-cart3"></i>
+                </a>
+
+                <div class="dropdown">
+                    <button class="btn btn-outline-light" type="button" id="accountMenu"
+                            data-bs-toggle="dropdown" aria-expanded="false"
+                            aria-label="Account Profile & Settings" title="Account Profile & Settings">
+                        <i class="bi bi-person-gear" aria-hidden="true"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountMenu">
+                        <li>
+                            <a class="dropdown-item" href="#" hx-get="/companies" hx-target="#main">
+                                Account Profile & Settings
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <nav class="d-flex flex-wrap gap-3 pt-3 small" aria-label="Main navigation">
+                <a class="text-white text-decoration-none" href="#" hx-get="/" hx-target="#main">Dashboard</a>
+                <a class="text-white text-decoration-none" href="#" hx-get="/materials" hx-target="#main">Materials</a>
+                <a class="text-white text-decoration-none" href="#" hx-get="/orders" hx-target="#main">Contractor </a>
+                <a class="text-white text-decoration-none" href="#" hx-get="/supplier" hx-target="#main">Supplier </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container-lg py-4">
+        <section class="row g-2 mb-4" aria-label="Featured procurement services">
+            <div class="col-lg-8">
+                <div class="marketplace-hero rounded-2 text-white d-flex align-items-center p-4 p-md-5">
+                    <div class="col-md-9">
+                        <div class="text-uppercase small fw-semibold mb-2">Build with trusted partners</div>
+                        <h1 class="display-6 fw-bold mb-2">Your next project starts here</h1>
+                        <p class="mb-4 text-white-50">Discover materials, compare supplier quotes, and keep every order moving.</p>
+                        <a class="btn btn-warning fw-semibold" href="#" hx-get="/materials" hx-target="#main">
+                            Explore the catalog <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                        <div class="hero-accent small mt-3"><i class="bi bi-check-circle me-1"></i>One place for construction procurement</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 d-flex flex-column gap-2">
+                <a class="marketplace-promo rounded-2 p-3 p-md-4 text-white text-decoration-none d-flex align-items-center"
+                   href="#" hx-get="/supplier" hx-target="#main">
+                    <div>
+                        <div class="small text-uppercase fw-semibold">For suppliers</div>
+                        <h2 class="h5 fw-bold mb-1">Grow your business</h2>
+                        <span class="small">Manage quotes and orders <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a class="marketplace-promo marketplace-promo-alt rounded-2 p-3 p-md-4 text-white text-decoration-none d-flex align-items-center"
+                   href="#" hx-get="/orders" hx-target="#main">
+                    <div>
+                        <div class="small text-uppercase fw-semibold">For contractors</div>
+                        <h2 class="h5 fw-bold mb-1">Keep projects on track</h2>
+                        <span class="small">Review requests and quotes <i class="bi bi-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-2 shadow-sm py-3 px-2 mb-4" aria-label="Quick links">
+            <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-6 g-2 text-center">
+                <div class="col">
+                    <a class="marketplace-shortcut d-flex flex-column align-items-center gap-2 p-2" href="#" hx-get="/materials" hx-target="#main">
+                        <span class="shortcut-icon"><i class="bi bi-box-seam"></i></span><span class="small">Materials Catalog</span>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="marketplace-shortcut d-flex flex-column align-items-center gap-2 p-2" href="#" hx-get="/orders" hx-target="#main">
+                        <span class="shortcut-icon"><i class="bi bi-file-earmark-text"></i></span><span class="small">Orders & Quotes</span>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="marketplace-shortcut d-flex flex-column align-items-center gap-2 p-2" href="#" hx-get="/supplier" hx-target="#main">
+                        <span class="shortcut-icon"><i class="bi bi-truck"></i></span><span class="small">Supplier Center</span>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="marketplace-shortcut d-flex flex-column align-items-center gap-2 p-2" href="#" hx-get="/companies" hx-target="#main">
+                        <span class="shortcut-icon"><i class="bi bi-buildings"></i></span><span class="small">Partner Accounts</span>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="marketplace-shortcut d-flex flex-column align-items-center gap-2 p-2" href="#" hx-get="/" hx-target="#main">
+                        <span class="shortcut-icon"><i class="bi bi-speedometer2"></i></span><span class="small">Project Dashboard</span>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="marketplace-shortcut d-flex flex-column align-items-center gap-2 p-2" href="#" hx-get="/companies" hx-target="#main">
+                        <span class="shortcut-icon"><i class="bi bi-person-plus"></i></span><span class="small">Become a Partner</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div id="main">
+            {{> dashboard}}
+        </div>
+    </main>
+</body>
+</html>
